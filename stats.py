@@ -14,7 +14,33 @@ def get_book_text(book_path):
                     letters_dict[char] = letters_dict[char] + 1
                 else:
                     letters_dict[char] = 1
+
+        
+        #print(letters_dict)
+        #print(f"Found {count} total words")
+        return letters_dict, count
         
 
-        print(letters_dict)
-        print(f"Found {count} total words")
+
+def sort_on(any_dict):
+    return any_dict["num"]
+
+
+def sort_dict(some_dict):
+    sorted_list = []
+    for somechar in some_dict:
+        lettercount = some_dict[somechar]
+        letter_dict = {"char": somechar, "num":lettercount}
+        sorted_list.append(letter_dict)
+    sorted_list.sort(reverse=True,key=sort_on)
+    #print(sorted_list)
+    return sorted_list
+    
+    
+    
+        
+    
+
+
+    
+    
